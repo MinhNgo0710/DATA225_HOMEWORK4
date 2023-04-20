@@ -63,21 +63,16 @@ Readme page:
 -   Learning how to use Python to process nosql data and json expansion
 
 I.  **Architecture setup & Tool**
-
-```{=html}
-<!-- -->
-```
 A.  **We setup a local mongodb using docker and mongodb image.**
 
-![](vertopal_339b4839cd3f4d3a8ecef88007359732/media/image1.png){width="5.260416666666667in"
-height="3.270138888888889in"}We proceed by installing and setup docker
+We proceed by installing and setup docker
 desktop, mongodb image. After pulling the mongodb, we continue to
 execute the mongo image and start setting up the test database.
 
 As detailed in the images below, mongo image is up and running on
 default port 27017/tcp.
 
-![Pull mongodb image](/images/pull_mongoimage.jpg)
+![Pull mongodb image](/images/analytical_mongodb.png)
  
 B.  **Cloud Cluster of mongodb**
 
@@ -89,8 +84,7 @@ Atlas. We connect to this via Mongo Compass.
 This cloud cluster can be accessible via this connection string:
 [mongodb+srv://doremon0710:M010980398@cluster0.1w74fo2.mongodb.net/test]
 
-![](vertopal_339b4839cd3f4d3a8ecef88007359732/media/image3.png){width="5.916666666666667in"
-height="3.8194444444444446in"}Tools: Mongo Compass, Jupyter Notebook for
+Tools: Mongo Compass, Jupyter Notebook for
 code/visualization
 
 II. **Problem and solution**
@@ -105,37 +99,22 @@ Python connector/driver. We will then analyze and visualize the data
 using popular Python Pandas Dataframe library. The Jupyter Notebook file
 is included along with the submission.
 
-![](vertopal_339b4839cd3f4d3a8ecef88007359732/media/image5.png){width="6.851388888888889in"
-height="2.9180555555555556in"}
-
 In this part, we query the
 <https://www.mongodb.com/docs/atlas/sample-data/sample-restaurants/#sample_restaurants.neighborhoods>
 collection.
 
-![](vertopal_339b4839cd3f4d3a8ecef88007359732/media/image6.png){width="5.034722222222222in"
-height="3.365972222222222in"}
-
 We can see that the geometry column contains nested json, we will need
 to expand this column to use the information within this column.
 
-![](vertopal_339b4839cd3f4d3a8ecef88007359732/media/image7.png){width="5.197222222222222in"
-height="3.9006944444444445in"}
-
-![](vertopal_339b4839cd3f4d3a8ecef88007359732/media/image8.png){width="6.5in"
-height="2.8645833333333335in"}
 
 After this, we have the complete neighborhood collection/table that is
 ready to use for analyzation and visualization.
 
 **Data analyzation and visualization**
 
-![](vertopal_339b4839cd3f4d3a8ecef88007359732/media/image9.png){width="6.5in"
-height="4.774305555555555in"}We use default python default plot package
-to visualize
+We use default python default plot package to visualize
 
-![](vertopal_339b4839cd3f4d3a8ecef88007359732/media/image10.png){width="6.5in"
-height="4.819444444444445in"}On another hand, we can also visualize the
-top 10 areas with the least amount of restaurants. They all have only 1
+On another hand, we can also visualize the top 10 areas with the least amount of restaurants. They all have only 1
 restaurant per each area as what we can see.
 
 ![](vertopal_339b4839cd3f4d3a8ecef88007359732/media/image11.png){width="6.5in"
@@ -145,34 +124,22 @@ column to do so.
 
 It gets us the total count, mean, std, min, 25% percentile and more.
 
-![](vertopal_339b4839cd3f4d3a8ecef88007359732/media/image12.png){width="6.215277777777778in"
-height="3.640972222222222in"}In this part, we query the
-<https://www.mongodb.com/docs/atlas/sample-data/sample-restaurants/#sample_restaurants.restaurants>
-collection.
+In this part, we query the <https://www.mongodb.com/docs/atlas/sample-data/sample-restaurants/#sample_restaurants.restaurants> collection.
 
-![](vertopal_339b4839cd3f4d3a8ecef88007359732/media/image13.png){width="6.157638888888889in"
-height="3.884027777777778in"}Just like the above part, we see that the
-address column contains nested json. So, we will also expand this into
+Just like the above part, we see that the address column contains nested json. So, we will also expand this into
 corresponding fields to have a more complete view.
 
-![](vertopal_339b4839cd3f4d3a8ecef88007359732/media/image14.png){width="6.5in"
-height="4.861805555555556in"}We also see that the grade column consists
-of a series of grade per each row. To better evaluate the grade, we only
-care about the most recent grade. To do so, we will design a custom
+We also see that the grade column consists of a series of grade per each row. To better evaluate the grade, we only care about the most recent grade. To do so, we will design a custom
 function to get only the recent grade per each restaurants.
 
 Now, we can visualize this table:
 
-We![](vertopal_339b4839cd3f4d3a8ecef88007359732/media/image15.png){width="6.5in"
-height="3.75in"} see that most restaurants in this collection have grade
+We see that most restaurants in this collection have grade
 A as most recently grade.
 
 **Visualize the location distribution of the restaurants**
 
 A majority of restaurants is located in North America.
-
-![](vertopal_339b4839cd3f4d3a8ecef88007359732/media/image16.png){width="6.5in"
-height="4.0in"}
 
 **How about the locations of only grade A restaurants?**
 
@@ -180,23 +147,16 @@ As we see, even if we only care about grade A restaurants, it is almost
 the same as the above visualization. This suggests that the sample
 dataset only has North America data.
 
-![](vertopal_339b4839cd3f4d3a8ecef88007359732/media/image17.png){width="6.502777777777778in"
-height="5.409722222222222in"}
-
 # **CRUD in mongodb compass**
 
 We will also use the sample_restaurants.neighborhoods as target
 collection for this part.
 
-![](vertopal_339b4839cd3f4d3a8ecef88007359732/media/image18.png){width="6.5in"
-height="3.011111111111111in"}First, we search (find) for a neighborhood
-called "Bedford"
+First, we search (find) for a neighborhood called "Bedford"
 
 Then, we create a new neighborhood with some random information as the
 below:
 
-![](vertopal_339b4839cd3f4d3a8ecef88007359732/media/image19.png){width="6.5in"
-height="3.6381944444444443in"}
 
 We create this new "row" with the below information:\
 geometry: Object
@@ -207,10 +167,7 @@ type: \"Polygon\"
 
 name: \"HillView\"
 
-![](vertopal_339b4839cd3f4d3a8ecef88007359732/media/image20.png){width="6.5in"
-height="2.6319444444444446in"}After the new row is created, we simply
-search for this with the name: "Hillview" to verify that we create it
-successfully:\
+After the new row is created, we simply search for this with the name: "Hillview" to verify that we create it successfully:
 **We can see that the total of documents is now 196 from 195, and we
 also see the new document in the search result.**
 
@@ -264,10 +221,7 @@ count: {\$sum: 1}
 
 }
 
-![](vertopal_339b4839cd3f4d3a8ecef88007359732/media/image25.png){width="6.5in"
-height="3.9229166666666666in"}We see that, the aggregation per group of
-cuisine has been done, with the total count per each group is included
-in the results. Chicken cuisine group has 410 restaurants.
+We see that, the aggregation per group of cuisine has been done, with the total count per each group is included in the results. Chicken cuisine group has 410 restaurants.
 
 We then do **another sorting aggregation** on top of the previous group
 by to see the top cuisine group with the greatest number of
@@ -285,10 +239,7 @@ count: -1
 
 }
 
-![](vertopal_339b4839cd3f4d3a8ecef88007359732/media/image26.png){width="6.5in"
-height="4.536111111111111in"}Now, we know that most of the restaurants
-in this collection are offering American cuisine, and up to 6183 of
-them. The next popular one is Chinese cuisine with 2418 restaurants.
+Now, we know that most of the restaurants in this collection are offering American cuisine, and up to 6183 of them. The next popular one is Chinese cuisine with 2418 restaurants.
 
 B.  
 
@@ -321,9 +272,9 @@ average_grade: {
 
 },\]
 
-![](vertopal_339b4839cd3f4d3a8ecef88007359732/media/image27.png){width="6.5in"
-height="4.754166666666666in"}Now we have the average score per each
-restaurant.
+Now we have the average score per each restaurant.
 
-![](vertopal_339b4839cd3f4d3a8ecef88007359732/media/image28.png){width="6.5in"
-height="4.371527777777778in"}We can also sort the result too.
+We can also sort the result too.
+
+
+[def]: pull_mongoimage.jpg
