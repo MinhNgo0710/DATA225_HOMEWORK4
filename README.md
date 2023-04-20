@@ -77,7 +77,7 @@ execute the mongo image and start setting up the test database.
 As detailed in the images below, mongo image is up and running on
 default port 27017/tcp.
 
-![Pull mongodb image](/images/pull_mongodb image.png)
+![Pull mongodb image](/images/pull_mongoimage.jpg)
  
 B.  **Cloud Cluster of mongodb**
 
@@ -87,7 +87,7 @@ cluster/shard** is then loaded with test databases as provided from
 Atlas. We connect to this via Mongo Compass.
 
 This cloud cluster can be accessible via this connection string:
-[mongodb+srv://doremon0710:M010980398@cluster0.1w74fo2.mongodb.net/test](mongodb+srv://doremon0710:M010980398@cluster0.1w74fo2.mongodb.net/test)
+[mongodb+srv://doremon0710:M010980398@cluster0.1w74fo2.mongodb.net/test]
 
 ![](vertopal_339b4839cd3f4d3a8ecef88007359732/media/image3.png){width="5.916666666666667in"
 height="3.8194444444444446in"}Tools: Mongo Compass, Jupyter Notebook for
