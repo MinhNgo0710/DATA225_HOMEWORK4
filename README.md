@@ -500,6 +500,3 @@ We have used SELECT Query to display at the records of the titanic dataset.
 
 
 
-
-
-![image](https://user-images.githubusercontent.com/129579490/233497483-b8bf045d-d45b-4a55-986b-79c601c1538a.png)
